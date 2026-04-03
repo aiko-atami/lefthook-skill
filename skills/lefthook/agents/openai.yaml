@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lefthook"
+  short_description: "Create, explain, and troubleshoot Lefthook hook configurations"
+  default_prompt: "Use $lefthook to design or update Lefthook configuration for this repository and explain the chosen hooks and options."

@@ -1,0 +1,11 @@
+pre-commit:
+  commands:
+    frontend lint:
+      root: frontend/
+      glob: "*.{js,ts,tsx}"
+      run: pnpm eslint --fix {staged_files}
+      stage_fixed: true
+    backend test:
+      root: backend/
+      glob: "*.go"
+      run: go test ./...

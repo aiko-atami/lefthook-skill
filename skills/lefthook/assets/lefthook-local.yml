@@ -1,0 +1,14 @@
+templates:
+  wrapper: dip
+
+pre-commit:
+  jobs:
+    - name: rubocop
+      run: "{wrapper} bundle exec rubocop --force-exclusion -- {staged_files}"
+
+post-merge:
+  files: "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD"
+  commands:
+    install deps:
+      glob: "package.json"
+      run: pnpm install
